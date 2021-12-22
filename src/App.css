@@ -1,4 +1,65 @@
-.App {
- 
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .Board {
+    font-family: sans-serif;
+    white-space: nowrap;
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .Board-title {
+      text-align: center;
+  }
+  
+  .Column {
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 20px;
+    background: #f2f2f2;
+    color: #bfdbf7;
+  }
+  
+  .Column__title {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .Card {
+    padding: 15px;
+    background: transparent;
+    border: 2px solid black;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .Control {
+      background-color: lightblue;
+  }
+
+  .Control-title {
+      text-align: center;
+      padding-top: 40px;
+  }
+
+  .Control-task-create {
+      margin: 10px;
+  }
+
+  .Control-task-operation {
+    padding: 10px;
 }
 
+.Control-task-input {
+    margin: 0 5px;
+}

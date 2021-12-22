@@ -1,14 +1,12 @@
 import React from 'react';
 
-import Task from './Task';
-
-const Stage = ({ name, stageId, tasks }) => {
+export function Stage(props) {
   return (
-    <div
-      data-testid={`stage-${stageId}`}>
-      
+    <div className="Column" data-testid={`stage-${props.index}`}>
+      <div className="Column__title">{props.title}</div>
+      {props.children}
     </div>
   );
-};
+}
 
 export default Stage;
