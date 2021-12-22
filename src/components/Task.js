@@ -4,10 +4,10 @@ const taskNameToId = name => {
   return `task-${name}`;
 }
 
-const Task = ({ name, handleClick }) => {
+const Task = ({ id , name, handleClick }) => {
   return (
     <div
-      data-testid={taskNameToId(name)}
+      data-testid={taskNameToId(id)}
       onClick={handleClick}
     >
       <div className={'Card'}>

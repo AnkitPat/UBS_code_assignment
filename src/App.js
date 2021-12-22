@@ -13,73 +13,73 @@ class App extends Component {
         {
           id: 1,
           title: 'Backlog',
-          cardIds: ['task 0', 'task 1', 'task 2', 'task 3']
+          cardIds: ['task-0', 'task-1', 'task-2', 'task-3']
         },
         {
           id: 2,
           title: 'To Do',
-          cardIds: ['task 4', 'task 5', 'task 6']
+          cardIds: ['task-4', 'task-5', 'task-6']
         },
         {
           id: 3,
           title: 'Ongoing',
-          cardIds: ['task 7', 'task 8']
+          cardIds: ['task-7', 'task-8']
         },
         {
           id: 4,
           title: 'Done',
-          cardIds: ['task 9']
+          cardIds: ['task-9']
         }
 
       ],
       cards: [
         {
-          id: 'task 0',
+          id: 'task-0',
           name: 'task 0',
           stageId: 1
         },
         {
-          id: 'task 1',
+          id: 'task-1',
           name: 'task 1',
           stageId: 1
         },
         {
-          id: 'task 2',
+          id: 'task-2',
           name: 'task 2',
           stageId: 1
         },
         {
-          id: 'task 3',
+          id: 'task-3',
           name: 'task 3',
           stageId: 1
         },
         {
-          id: 'task 4',
+          id: 'task-4',
           name: 'task 4',
           stageId: 2
         },
         {
-          id: 'task 5',
+          id: 'task-5',
           name: 'task 5',
           stageId: 2
         },
         {
-          id: 'task 6',
+          id: 'task-6',
           name: 'task 6',
           stageId: 2
         },
         {
-          id: 'task 7',
+          id: 'task-7',
           name: 'task 7',
           stageId: 3
         },
         {
-          id: 'task 8',
+          id: 'task-8',
           name: 'task 8',
           stageId: 3
         },
         {
-          id: 'task 9',
+          id: 'task-9',
           name: 'task 9',
           stageId: 4
         }
@@ -92,14 +92,14 @@ class App extends Component {
   /**
    * 
    * 
-   * Function to add task name
+   * Function to add task-name
    * Conditions,
-   * If Task name is empty
-   * If task is not found
-   * If task already exists
+   * If task-name is empty
+   * If task-is not found
+   * If task-already exists
    * @param {*} taskName 
    */
-  addTask = (taskName) => {
+  addTask= (taskName) => {
     if (taskName.length > 0) {
       const index = this.state.cards.findIndex(card => card.name === taskName);
       if (index === -1) {
@@ -115,22 +115,22 @@ class App extends Component {
           stagesNames: tempStateName
         })
       } else {
-        alert('Task already exists');
+        alert('task-already exists');
       }
     } else {
-      alert('Please enter task name');
+      alert('Please enter task-name');
     }
   }
 
    /**
    * 
    * 
-   * Function to add task name
+   * Function to add task-name
    * Conditions,
-   * If Task name is empty
-   * If task is not found
+   * If task-name is empty
+   * If task-is not found
    */
-  deleteTask = () => {
+  deleteTask= () => {
     if (this.state.selectedCardName.length > 0) {
       const card = this.state.cards.find(card => card.name === this.state.selectedCardName);
       if (card) {
@@ -138,27 +138,27 @@ class App extends Component {
           cards: this.state.cards.filter(innerCard => innerCard.name !== card.name),
           stagesNames: this.state.stagesNames.map(stageName => {
             if (stageName.id === card.stageId) {
-              return { ...stageName, cardIds: stageName.cardIds.filter(cardId => cardId !== card.name) }
+              return { ...stageName, cardIds: stageName.cardIds.filter(cardId => cardId !== card.id) }
             }
             return stageName
           })
         })
       } else {
-        alert('Task not found');
+        alert('task-not found');
 
       }
     } else {
-      alert('Please enter task name');
+      alert('Please enter task-name');
     }
   }
 
    /**
    * 
    * 
-   * Function to add task name
+   * Function to add task-name
    * Conditions,
-   * If Task name is empty
-   * If task is not found
+   * If task-name is empty
+   * If task-is not found
    * If forward, check stageId should be less than 4
    * If back, check stageId should be greater than 1
    * @param {*} isForward 
@@ -216,15 +216,15 @@ class App extends Component {
         }
 
       } else {
-        alert('Task not found');
+        alert('task-not found');
 
       }
     } else {
-      alert('Please enter task name');
+      alert('Please enter task-name');
     }
   }
 
-  // Function to check if selected task is able to move forward
+  // Function to check if selected task-is able to move forward
   isAbleToForward = () => {
     const card = this.state.cards.find(card => card.name === this.state.selectedCardName);
     if (card) {
@@ -233,7 +233,7 @@ class App extends Component {
     return true;
   }
 
-  // Function to check if selected task is able to move back
+  // Function to check if selected task-is able to move back
   isAbleToBack = () => {
     const card = this.state.cards.find(card => card.name === this.state.selectedCardName);
     if (card) {
