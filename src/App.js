@@ -150,6 +150,10 @@ class App extends Component {
     } else {
       alert('Please enter task-name');
     }
+
+    this.setState({
+      selectedCardName: ''
+    })
   }
 
    /**
